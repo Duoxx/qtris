@@ -10,7 +10,7 @@ public:
     {
         QVector<QColor> tetrisColors
         {
-            QColor(255, 255, 255),
+            QColor(255, 255, 255), //white
             QColor(0, 200,   255), //cyan
             QColor(0, 128,   255), //blue
             QColor(255, 128, 0), //orange

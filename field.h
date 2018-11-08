@@ -5,7 +5,6 @@
 #include <QPainter>
 #include <QColor>
 #include "colors.h"
-#include "tetromino.h"
 
 class Tetromino;
 
@@ -15,7 +14,12 @@ public:
     Field();
     Field(int sx, int sy);
     ~Field();
-    bool inBounds(Tetromino& brick);
+    bool inBounds(Tetromino& brick, int prevX);
+    bool placeable(Tetromino& brick);
+    bool place(Tetromino& brick);
+    void scan();
+    bool scanLine(int lineN);
+    int score;
     void setSize(int sx, int sy);
     void draw(QPainter& painter);
 private:

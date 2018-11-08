@@ -14,9 +14,20 @@ class Tetromino
 public:
     Tetromino();
     void setType(char type);
-    void rotateTetromino();
+    void rotateTetromino(Field& f);
     void draw(QPainter& painter);
-    void move(Field& f, int x, int y);
+    int getWidth();
+    int getHeight();
+    int getFirstTileFromLeft();
+    int getLastLeftTile();
+    int getFirstTopTile();
+    int getLastTopTile();
+    int getSize();
+    char getTile(int x, int y);
+    int getColor();
+    void move(Field& f, int x);
+    bool assignTetromino(Field& f, bool &gameOver);
+    void moveDown();
     QPoint getPosition();
 private:
     void makeBrick(int size);
@@ -24,6 +35,7 @@ private:
     char** brick;
     QColor color;
     QPoint position;
+    int intColor;
     int brickSize;
 };
 
